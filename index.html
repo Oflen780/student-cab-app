@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Cab Share</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyB0BIeIwRHoi4IGom59SOyMhxSRqyHvuks",
+    authDomain: "student-cab-app.firebaseapp.com",
+    projectId: "student-cab-app",
+    storageBucket: "student-cab-app.firebasestorage.app",
+    messagingSenderId: "891596108516",
+    appId: "1:891596108516:web:692ec2ec42e672304bb2f1",
+    measurementId: "G-XRF61WHG2T"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</head>
+<body>
+  <div class="container">
+    <h1>Find a Cab</h1>
+    <form id="cabForm">
+      <label for="pickup">Pickup Location:</label>
+      <input type="text" id="pickup" placeholder="e.g., UFS Main Gate" required>
+
+      <label for="dropoff">Drop-off Location:</label>
+      <input type="text" id="dropoff" placeholder="e.g., Park West" required>
+
+      <label for="date">Date & Time:</label>
+      <input type="datetime-local" id="datetime" required>
+
+      <button type="submit">Find Cab</button>
+    </form>
+
+    <div id="results"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
